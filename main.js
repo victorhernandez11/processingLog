@@ -12,8 +12,9 @@ function createMainWindow() {
     mainWindow.webContents.openDevTools();
 
     const startUrl = url.format({
-        pathname: path.join(__dirname, './app/build/index.html'),
-        protocol: 'file'
+        pathname: path.join(__dirname, "./app/build/index.html"),
+        protocol: 'file:',
+        slashes: true
     });
 
     mainWindow.loadURL(startUrl);
