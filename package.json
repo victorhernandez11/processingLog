@@ -1,7 +1,7 @@
 {
-  "name": "observatorysoftware",
-  "version": "0.0.1",
-  "description": "App to facilitate the input of data processing results",
+  "name": "processinglog",
+  "version": "1.0.0",
+  "description": "App that facilitates the logging of the telescope's data processing",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,12 +12,6 @@
     "type": "git",
     "url": "git+https://github.com/victorhernandez11/processingLog.git"
   },
-  "keywords": [
-    "electron",
-    "react",
-    "observatory",
-    "processing"
-  ],
   "author": "Victor Hernandez",
   "license": "MIT",
   "bugs": {
