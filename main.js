@@ -7,9 +7,13 @@ function createMainWindow() {
         title: 'Processing Log',
         width: 1000,
         height: 600,
+        webPreferences: {
+            contextIsolation: true,
+            nodeIntegration: true,
+        }
     });
 
-    mainWindow.webContents.openDevTools();
+    // mainWindow.webContents.openDevTools();
 
     const startUrl = url.format({
         pathname: path.join(__dirname, "./app/build/index.html"),
