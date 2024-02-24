@@ -1,8 +1,9 @@
-import React from 'react';
 import './App.css';
 import CreatableSelect from 'react-select/creatable';
 import { options } from './components/options';
+import { Key } from 'react';
 
+const data = require('./result.json');
 
 function App() {
   return (
@@ -16,20 +17,20 @@ function App() {
           <thead>
             <tr>
               <th style={{ width: '10%' }}>Log?</th>
-              <th style={{ width: '20%' }}>Name</th>
+              <th style={{ width: '15%' }}>Name</th>
               <th style={{ width: '35%' }}>Code</th>
               <th style={{ width: '10%' }}>Submit</th>
-              <th style={{ width: '25%' }}>Comments</th>
+              <th style={{ width: '30%' }}>Comments</th>
             </tr>
           </thead>
           <tbody>
-            {Array.from({ length: 10 }).map((_, index) => (
+            {data.result.map((item: { Dataset: string; }, index: Key | null | undefined) => (
               <tr key={index}>
                 <td>
                   <input type="checkbox" />
                 </td>
                 <td>
-                  Observation_name{index}
+                  {item.Dataset.split('_')[0]}
                 </td>
                 <td>
                   <CreatableSelect
@@ -55,5 +56,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
