@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/victorhernandez11/processingLog#readme",
   "dependencies": {
-    "electron": "^28.2.2"
+    "electron": "^28.2.2",
+    "react-select": "^5.8.0"
   }
 }

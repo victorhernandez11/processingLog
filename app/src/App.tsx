@@ -1,48 +1,8 @@
-// import React from 'react';
-// import './App.css';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <div className="container">
-//         <div className="header">
-//           <div className="column">Log?</div>
-//           <div className="column">Name</div>
-//           <div className="column">Code</div>
-//           <div className="column">Submission Status</div>
-//           <div className="column">Comments</div>
-//         </div>
-//         {Array.from({ length: 10 }).map((_, index) => (
-//           <div key={index} className="row">
-//             <div className="column">
-//               <input type="checkbox" />
-//             </div>
-//             <div className="column">
-//               Observation_name{index}
-//             </div>
-//             <div className="column">
-//               <select>
-//                 <option value="">Select</option>
-//                 <option value="code1">Code1</option>
-//                 <option value="code2">Code2</option>
-//               </select>
-//             </div>
-//             <div className="column">
-//               <input type="checkbox" />
-//             </div>
-//             <div className="column">
-//               <input type="text" placeholder="Comments" />
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default App;
 import React from 'react';
 import './App.css';
+import CreatableSelect from 'react-select/creatable';
+import { options } from './components/options';
+
 
 function App() {
   return (
@@ -55,11 +15,11 @@ function App() {
         <table className="table">
           <thead>
             <tr>
-              <th>Log?</th>
-              <th>Name</th>
-              <th>Code</th>
-              <th>Submit</th>
-              <th>Comments</th>
+              <th style={{ width: '10%' }}>Log?</th>
+              <th style={{ width: '20%' }}>Name</th>
+              <th style={{ width: '35%' }}>Code</th>
+              <th style={{ width: '10%' }}>Submit</th>
+              <th style={{ width: '25%' }}>Comments</th>
             </tr>
           </thead>
           <tbody>
@@ -72,11 +32,12 @@ function App() {
                   Observation_name{index}
                 </td>
                 <td>
-                  <select>
-                    <option value="">Select</option>
-                    <option value="code1">Code1</option>
-                    <option value="code2">Code2</option>
-                  </select>
+                  <CreatableSelect
+                    className='select'
+                    options={options}
+                    isMulti
+                    styles={{ control: (base) => ({ ...base, width: 300 }) }}
+                  />
                 </td>
                 <td>
                   <input type="checkbox" />
@@ -89,6 +50,7 @@ function App() {
           </tbody>
         </table>
         <button className="submit-button">Submit</button>
+        <button className="generate-report-button">Generate Report</button>
       </div>
     </div>
   );

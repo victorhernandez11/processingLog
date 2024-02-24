@@ -1,15 +1,23 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fefefe;
+}
+
+/* Title Section */
 .title-section {
   width: 70%;
   max-width: 1200px;
   margin: 0 auto;
-  padding-top: 40px;
+  padding-top: 80px;
   padding-bottom: 40px;
 }
 
 .title {
   color: #333333;
   font-size: 32px;
-  margin: 0 0 5px 0;
+  margin-bottom: 5px;
 }
 
 .subtitle {
@@ -18,31 +26,25 @@
   margin: 0;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #fefefe;
+/* Table Styles */
+.table-container {
+  width: 70%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 40px;
 }
 
 .table {
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
   border-collapse: collapse;
   margin-bottom: 40px;
+  table-layout: fixed;
 }
 
 th,
 td {
   padding: 8px;
   text-align: left;
-}
-
-td {
-  border-bottom: 1px solid #f3f3f3;
-  font-size: 14px;
-  color: #535353;
 }
 
 th {
@@ -52,18 +54,44 @@ th {
   color: #373737;
 }
 
+td {
+  border-bottom: 1px solid #f3f3f3;
+  font-size: 14px;
+  color: #535353;
+}
+
+/* Form Elements */
+.table td input[type="checkbox"] {
+  display: block;
+  margin: 0 auto;
+}
+
 textarea {
   resize: none;
   font-family: Arial, sans-serif;
   height: 1.3em;
   padding: 5px;
   width: 95%;
+  border-color: #bbbbbb;
 }
 
 textarea:focus {
   resize: vertical;
 }
 
+/* Adjusting padding for Code column */
+.table td:nth-child(3) {
+  padding-right: 4px;
+  /* Reduce right padding */
+}
+
+/* Adjusting padding for Submit column */
+.table td:nth-child(4) {
+  padding-left: 4px;
+  /* Reduce left padding */
+}
+
+/* Submit Button */
 button {
   float: right;
   padding: 10px 30px;
@@ -77,10 +105,21 @@ button {
   margin-bottom: 80px;
 }
 
-.table-container {
-  width: 70%;
-  max-width: 1200px;
-  margin: 0 auto;
-  border-collapse: collapse;
-  margin-bottom: 40px;
+.generate-report-button {
+  float: right;
+  padding: 8.5px 28px;
+  /* Adjusted to account for the border */
+  font-size: 16px;
+  font-weight: 600;
+  border: 1.5px solid #333333;
+  /* Border color */
+  background-color: transparent;
+  color: #333333;
+  /* Text color */
+  cursor: pointer;
+  border-radius: 8px;
+  margin-bottom: 80px;
+  margin-right: 24px;
+  /* Space between the buttons */
+  box-sizing: border-box;
 }
