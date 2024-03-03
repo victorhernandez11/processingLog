@@ -19,6 +19,10 @@
   },
   "homepage": "https://github.com/victorhernandez11/processingLog#readme",
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "@mui/lab": "^5.0.0-alpha.166",
+    "@mui/material": "^5.15.11",
     "electron": "^28.2.2",
     "react-select": "^5.8.0"
   }

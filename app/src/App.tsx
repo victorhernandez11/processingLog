@@ -1,11 +1,18 @@
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import CreatableSelect from 'react-select/creatable';
 import { options } from './components/options';
-import { Key } from 'react';
-
-const data = require('./result.json');
 
 function App() {
+  const [data, setData] = useState({ result: [] });
+
+  useEffect(() => {
+    fetch('http://localhost:5010/obs/statusUnknown')
+      .then(response => response.json())
+      .then(data => setData(data))
+      .catch(error => console.error('Error fetching data:', error));
+  }, []);
+
   return (
     <div className="App">
       <div className="title-section">
@@ -16,21 +23,17 @@ function App() {
         <table className="table">
           <thead>
             <tr>
-              <th style={{ width: '10%' }}>Log?</th>
-              <th style={{ width: '15%' }}>Name</th>
-              <th style={{ width: '35%' }}>Code</th>
-              <th style={{ width: '10%' }}>Submit</th>
-              <th style={{ width: '30%' }}>Comments</th>
+              <th style={{ width: '17.5%' }}>Name</th>
+              <th style={{ width: '37.5%' }}>Code</th>
+              <th style={{ width: '12.5%' }}>Submit</th>
+              <th style={{ width: '32.5%' }}>Comments</th>
             </tr>
           </thead>
           <tbody>
-            {data.result.map((item: { Dataset: string; }, index: Key | null | undefined) => (
+            {data.result.map((item, index) => (
               <tr key={index}>
                 <td>
-                  <input type="checkbox" />
-                </td>
-                <td>
-                  {item.Dataset.split('_')[0]}
+                  {(item as { Dataset: string }).Dataset.split('_')[0]}
                 </td>
                 <td>
                   <CreatableSelect
@@ -56,6 +59,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;
